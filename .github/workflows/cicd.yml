@@ -1,18 +1,26 @@
-name: Docker CI
+name: Simple CI/CD for React Docker App
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
+    branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Build docker image with compose
-      run: |
-        docker compose build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        run: docker-compose build
+
+      - name: Save Docker Image as Tarball (optional)
+        run: docker save react-app > react-app.tar
+
+      # Add your deploy step below (e.g., SCP to server, or manual pull/push if needed)
+      # - name: Deploy (example: Save artifact or copy to server)
+      #   run: echo "Deploy step here"
