@@ -16,11 +16,4 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker Image
-        run: docker-compose build
-
-      - name: Save Docker Image as Tarball (optional)
-        run: docker save react-app > react-app.tar
-
-      # Add your deploy step below (e.g., SCP to server, or manual pull/push if needed)
-      # - name: Deploy (example: Save artifact or copy to server)
-      #   run: echo "Deploy step here"
+        run: docker compose build
