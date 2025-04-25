@@ -6,7 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-<<<<<<< HEAD:Docker-compose.yml
       - "8080:80"
     restart: always
     volumes:
@@ -14,7 +13,3 @@ services:
 
 volumes:
   persis:
-=======
-      - "8080:80"
-    restart: always
->>>>>>> e3d76c0f8487b8696ae99a820e9c2890735bbabe:docker-compose.yml
