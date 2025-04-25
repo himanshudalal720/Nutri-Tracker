@@ -6,5 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "8090:80"
     restart: always
+    volumes:
+      - persis:/app/data
+
+volumes:
+  persis:
