@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
 <<<<<<< HEAD:Docker-compose.yml
-      - "8090:80"
+      - "8080:80"
     restart: always
     volumes:
       - persis:/app/data
