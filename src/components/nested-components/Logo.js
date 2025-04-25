@@ -10,7 +10,7 @@ const Logo = ({setIsMenuOpened}) => {
     
     return (
         <Link to="" className="logo" onClick={handleLogoClick}>
-            <h1>Nutri-Tracker</h1>
+            <h1>Nutri-Calculator</h1>
         </Link>
   )
 }
